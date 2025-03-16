@@ -1,46 +1,115 @@
-# Start with an array of numbers and create a new array with each number times 3.
-# For example, [1, 2, 3] becomes [3, 6, 9].
+# Start with an array of numbers and create a new array with only the numbers less than 20.
+# For example, [2, 32, 80, 18, 12, 3] becomes [2, 18, 12, 3].
 
-nums = [1,2,3]
-p nums.map { |num| num * 3 }
+arr = [2, 32, 80, 18, 12, 3]
+p arr.select { |num| num < 20 }
 
-# Start with an array of strings and create a new array with each string upcased.
-# For example, ["hello", "goodbye"] becomes ["HELLO", "GOODBYE"].
+# Start with an array of strings and create a new array with only the strings that start with the letter "w".
+# For example, ["winner", "winner", "chicken", "dinner"] becomes ["winner", "winner"].
 
-strs = ["hello", "goodbye"]
-upcased = strs.map { |str| str.upcase }
-p upcased
+arr = ["winner", "Winner", "chicken", "dinner"]
+ws = []
+arr.each do |word|
+  if word[0].downcase == 'w'
+    ws << word
+  end
+end
+p ws
 
-# Start with an array of hashes and create a new array of string values from each hash's :name key.
-# For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes ["Alice", "Blane"].
+p arr.select { |word| word.downcase.start_with? "w" }
+p arr.select { |word| word[0].downcase == "w" }
 
-peeps = [{name: "Alice", age: 27}, {name: "Blane", age: 16}]
-names = peeps.map { |peep| peep[:name] }
-p names
+# Start with an array of strings and create a new array with only the strings that start with the letter "w".
+# For example, ["winner", "winner", "chicken", "dinner"] becomes ["winner", "winner"].
 
-# Start with an array of numbers and create a new array with each number plus 7.
-# For example, [1, 2, 3] becomes [8, 9, 10].
+words = ["winner", "winner", "Winner", "chicken", "dinner"]
+ws = []
 
-arr = [1,2,3]
-p arr.map { |num| num + 7 }
+i = 0
+while i < words.length
+  if words[i][0].downcase == "w"
+    ws << words[i] 
+  end
+  i += 1
+end
+p ws
 
-# Start with an array of strings and create a new array with each string's length.
-# For example, ["hello", "goodbye"] becomes [5, 7].
+words = ["winner", "winner", "Winner", "chicken", "dinner"]
+ws = []
 
-strs = ["hello", "goodbye"]
-p strs.map{ |str| str.length}
+words.each do |word| 
+  if word[0].downcase == 'w'
+    ws << word
+  end
+end
+p ws
 
-# Start with an array of hashes and create a new array of number values from each hash's :age key.
-# For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes [27, 16].
+words = ["winner", "winner", "Winner", "chicken", "dinner"]
+ws = words.select { |word| word[0].downcase == 'w' }
+p ws
+wss = words.select do |word|
+  word[0].downcase == 'w'
+end
+p wss
 
-# Start with an array of numbers and create a new array with each number divided by 2.
-# For example, [1, 2, 3] becomes [0.5, 1.0, 1.5].
+words = ["winner", "winner", "Winner", "Winner", "chicken", "dinner"]
+ws = words.select { |word| word.downcase.start_with? 'w' }
+p ws
 
-# Start with an array of strings and create a new array with each string's first letter only.
-# For example, ["hello", "goodbye"] becomes ["h", "g"].
+# Start with an array of hashes and create a new array with only the hashes with prices greater than 5 (from the :price key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "chair", price: 100}].
 
-# Start with an array of hashes and create a new array of number values from each hash's :age key times 2.
-# For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes [54, 32].
+items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
 
-# Start with an array of numbers and create a new array with each number converted into a string.
-# For example, [1, 2, 3] becomes ["1", "2", "3"].
+exp = []
+items.each do |item|
+  if item[:price] > 5
+    exp << item
+  end
+end
+p exp
+
+p items.select { |item| item[:price] > 5 }
+
+
+# Start with an array of numbers and create a new array with only the even numbers.
+# For example, [2, 4, 5, 1, 8, 9, 7] becomes [2, 4, 8].
+
+
+
+
+# Start with an array of strings and create a new array with only the strings shorter than 4 letters.
+# For example, ["a", "man", "a", "plan", "a", "canal", "panama"] becomes ["a", "man", "a", "a"].
+
+
+
+
+# Start with an array of hashes and create a new array with only the hashes with names shorter than 6 letters (from the :name key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "chair", price: 100}, {name: "book", price: 4}].
+
+
+
+
+# Start with an array of numbers and create a new array with only the numbers greater than or equal to 23.
+# For example, [8, 23, 0, 44, 1980, 3] becomes [23, 44, 1980].
+
+
+
+
+# Start with an array of strings and create a new array with only the strings that don't start with the letter "b".
+# For example, ["big", "little", "good", "bad"] becomes ["little", "good"].
+
+
+
+
+# Start with an array of hashes and create a new array with only the hashes with prices less than 10 (from the :price key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "pencil", price: 1}, {name: "book", price: 4}].
+
+
+
+
+# Start with an array of numbers and create a new array with only the odd numbers.
+# For example, [2, 4, 5, 1, 8, 9, 7] becomes [5, 1, 9, 7].
+
+
+
