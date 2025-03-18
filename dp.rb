@@ -113,3 +113,68 @@ p items.select { |item| item[:price] > 5 }
 
 
 
+# Codewars - Maximum Length Difference
+
+def mxdiflg(a1, a2)
+
+  return -1 if a1.empty? || a2.empty?
+
+  a1max = -Float::INFINITY
+  a1min = Float::INFINITY
+  a2max = -Float::INFINITY
+  a2min = Float::INFINITY
+
+  a1.each do |str|
+    l = str.length
+    a1max = l if l > a1max
+    a1min = l if l < a1min
+  end
+
+  a2.each do |str|
+    l = str.length
+    a2max = l if l > a2max
+    a2min = l if l < a2min
+  end
+
+  spread1 = a1max - a2min
+  spread2 = a2max - a1min
+
+  return [spread1, spread2].max.to_s
+end
+
+
+
+def mxdiflg(a1, a2)
+  return -1 if a1.empty? || a2.empty?
+
+  min1, max1 = a1.map(&:size).minmax
+  min2, max2 = a2.map(&:size).minmax
+
+  [max1 - min2, max2 - min1].max
+end
+
+arr1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"]
+arr2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]
+p mxdiflg(arr1, arr2)
+
+# Codewars - USD => CNY
+
+def usdcny(usd)
+  # yuan = multiply by 6.75. to two decimal places
+  unrounded_yuan = usd * 6.75
+  yuan = sprintf("%.2f", unrounded_yuan)
+  # return yuan + sentence
+  "#{yuan} Chinese Yuan"
+end
+
+def usdcny(usd)
+  "#{"%.2f" %(usd * 6.75)} Chinese Yuan"
+end
+
+p usdcny(465)
+
+def usdcny(usd)
+  "#{"%.2f" %(usd * 6.75)} Chinese Yuan"
+end
+
+p usdcny(15)
