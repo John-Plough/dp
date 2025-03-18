@@ -1,25 +1,30 @@
-// Start with an array of numbers and create a new array with only the numbers less than 20.
-// For example, [2, 32, 80, 18, 12, 3] becomes [2, 18, 12, 3].
+// 03-loops4.md
 
-const arr = [2, 32, 80, 18, 12, 3];
-const filtered = arr.filter((num) => num < 20);
-// console.log(filtered);
+// Start with an array of numbers and compute the sum of all the numbers.
+// For example, [5, 10, 8, 3] becomes 26.
 
-// Start with an array of strings and create a new array with only the strings that start with the letter "w".
-// For example, ["winner", "winner", "chicken", "dinner"] becomes ["winner", "winner"].
+const arr = [5, 10, 8, 3];
 
-const words = ["winner", "Winner", "winner", "chicken", "dinner"];
-// const ws = words.filter((word) => word[0].toLowerCase() === "w");
-const ws = [];
-words.forEach((word) => {
-  if (word[0].toLowerCase() === "w") {
-    ws.push(word);
-  }
-});
-// console.log(ws);
+let total = arr.reduce((acc, num) => acc + num, 0);
+console.log(total);
 
-// Start with an array of hashes and create a new array with only the hashes with prices greater than 5 (from the :price key).
-// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "chair", price: 100}].
+const sum = arr.reduce(function (acc, num) {
+  return acc + num;
+}, 0);
+console.log(sum);
+
+// Start with an array of strings and combine them all into a single string.
+// For example, ["volleyball", "basketball", "badminton"] becomes "volleyballbasketballbadminton".
+
+const sports = ["volleyball", "basketball", "badminton"];
+
+const string = sports.reduce((str, sport) => str + sport, "");
+console.log(string);
+const string1 = sports.join("");
+console.log(string1);
+
+// Start with an array of hashes and compute the sum of the prices (from the :price key).
+// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes 105.
 
 const items = [
   { name: "chair", price: 100 },
@@ -27,49 +32,32 @@ const items = [
   { name: "book", price: 4 },
 ];
 
-const exp = [];
-items.forEach((item) => {
-  if (item.price > 5) {
-    exp.push(item);
-  }
-});
-// console.log(exp);
+total = items.reduce((total, item) => (total += item.price), 0);
+console.log(total);
 
-// console.log(items.filter((item) => item.price > 5));
-
-// Start with an array of numbers and create a new array with only the even numbers.
-// For example, [2, 4, 5, 1, 8, 9, 7] becomes [2, 4, 8].
-
-const arr1 = [2, 4, 5, 1, 8, 9, 7];
-const evens = [];
-for (let i = 0; i < arr1.length; i++) {
-  if (arr1[i] % 2 === 0) {
-    evens.push(arr1[i]);
-  }
+let sum1 = 0;
+for (let i = 0; i < items.length; i++) {
+  sum1 += items[i].price;
 }
-console.log(evens);
+console.log(sum1);
 
-const evens1 = arr1.filter((num) => num % 2 === 0);
-console.log(evens1);
+// Start with an array of numbers and compute the the minimum number.
+// For example, [5, 10, 8, 3, 9] becomes 3.
 
-// Start with an array of strings and create a new array with only the strings shorter than 4 letters.
-// For example, ["a", "man", "a", "plan", "a", "canal", "panama"] becomes ["a", "man", "a", "a"].
+// Start with an array of strings and compute the total length of all the strings.
+// For example, ["volleyball", "basketball", "badminton"] becomes 29.
 
-const shorts = ["a", "man", "a", "plan", "a", "canal", "panama"];
-const supshorts = shorts.filter((word) => word.length < 4);
-console.log(supshorts);
+// Start with an array of hashes and find the hash with the lowest price (from the :price key).
+// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "pencil", price: 1}.
 
-// Start with an array of hashes and create a new array with only the hashes with names shorter than 6 letters (from the :name key).
-// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "chair", price: 100}, {name: "book", price: 4}].
+// Start with an array of numbers and compute product of all the numbers.
+// For example, [5, 10, 8, 3] becomes 1200.
 
-// Start with an array of numbers and create a new array with only the numbers greater than or equal to 23.
-// For example, [8, 23, 0, 44, 1980, 3] becomes [23, 44, 1980].
+// Start with an array of strings and combine them all into a single string, separated by dashes.
+// For example, ["volleyball", "basketball", "badminton"] becomes "-volleyball-basketball-badminton-".
 
-// Start with an array of strings and create a new array with only the strings that don't start with the letter "b".
-// For example, ["big", "little", "good", "bad"] becomes ["little", "good"].
+// Start with an array of hashes and find the hash with the shortest name (from the :name key).
+// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "book", price: 4}.
 
-// Start with an array of hashes and create a new array with only the hashes with prices less than 10 (from the :price key).
-// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "pencil", price: 1}, {name: "book", price: 4}].
-
-// Start with an array of numbers and create a new array with only the odd numbers.
-// For example, [2, 4, 5, 1, 8, 9, 7] becomes [5, 1, 9, 7].
+// Start with an array of numbers and compute the maximum number.
+// For example, [5, 10, 8, 3] becomes 10.
