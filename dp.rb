@@ -1,91 +1,96 @@
-# 03-loops4.md
+# 05-custom-methods-classes3.md
 
-# Start with an array of numbers and compute the sum of all the numbers.
-# For example, [5, 10, 8, 3] becomes 26.
+# Write a Song class with attributes and reader/writer methods for name, artist, and duration. Then write a method that prints the name, artist, and duration in a single sentence.
 
-arr = [5, 10, 8, 3]
 
-total = 0
-i = 0
-while i < arr.length
-  total += arr[i]
-  i += 1
+# Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
+
+
+# Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
+
+
+# Write a Coordinate class with attributes and reader/writer methods for latitude and longitude. Then write a method that prints out the latitude and longitude in a single sentence.
+
+
+# Write an Account class with attributes and reader/writer methods for name and balance. Then write a method that prints a warning if the balance is below $100.
+
+
+# Write a Movie class with attributes and reader/writer methods for title, director, and year. Then write a method that prints out the attributes in a single sentence.
+
+
+# Write a Car class with attributes and reader/writer methods for make, model, year, and color. Then write a method that returns the make and model as a single sentence in all lowercase letters.
+
+
+# Write a Point class with attributes and reader/writer methods for x, y, and z coordinates. Then write a method that returns true if all 3 numbers are positive, otherwise it returns false.
+
+
+# Write a Book class with attributes and reader/writer methods for title, author, and year. Then write a method that returns "Classic" if the book is older than 2000, otherwise it returns "Modern".
+
+
+# Write a Plant class with attributes and reader/writer methods for name, size, and price. Then write a method that prints out the attributes in a single sentence.
+
+# Codewars - Remove Odd Hashes
+
+def remove_odd_hashes(array, key_1, key_2)
+  array.select { |hash| (hash[key_1] + hash[key_2]).even? }
 end
-# p total
 
-# p arr.reduce(0) { |acc, num| acc + num }
+# p remove_odd_hashes([ {a: 5, b: 5}, 
+# {a: 3, b: 4}, 
+# {a: 2, b: 0}, 
+# {a: 2, b: 1}], 
+# :a, :b)
 
-# p arr.sum
+# Codewars - Sum of Cubes
 
-# Start with an array of strings and combine them all into a single string.
-# For example, ["volleyball", "basketball", "badminton"] becomes "volleyballbasketballbadminton".
+def sum_cubes(n)
+  total = 0
+  i = 1
 
-arr = ["volleyball", "basketball", "badminton"]
-
-# p arr.reduce("") { |str, sport| str += sport }
-
-# Start with an array of hashes and compute the sum of the prices (from the :price key).
-# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes 105.
-
-items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
-# p items.reduce(0) { |total, item| total += item[:price] }
-
-sum = 0
-items.each { |item| sum += item[:price] }
-# p sum
-
-# Start with an array of numbers and compute the the minimum number.
-# For example, [5, 10, 8, 3, 9] becomes 3.
-
-arr = [5, 10, 8, 3, 9]
-
-min = Float::INFINITY
-i = 0
-while i < arr.length
-  if arr[i] < min
-    min = arr[i]
+  while i <= n
+    total += (i*i*i)
+    i += 1
   end
-  i += 1
+
+  total
 end
-# p min
 
-min = arr.reduce(Float::INFINITY) do |low, num|
-  num < low ? num : low
+def sum_cubes(n)
+
 end
-# p min
 
-# p arr.min
-
-# Start with an array of strings and compute the total length of all the strings.
-# For example, ["volleyball", "basketball", "badminton"] becomes 29.
-
-arr = ["volleyball", "basketball", "badminton"]
-
-total = 0
-arr.each do |str|
-  total += str.length
+def sum_cubes(n)
+  (1..n).inject(0) { |sum, i| sum + i**3 }
 end
-p total
 
-total = arr.reduce(0) { |total, str| total += str.length }
-p total
+def sum_cubes(n)
+  (1..n).sum { |i| i**3 }
+end
 
-# Start with an array of hashes and find the hash with the lowest price (from the :price key).
-# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "pencil", price: 1}.
+# Codewars - CSV representation of array
+
+def to_csv_text(array)
+  output = ''
+  i = 0
+
+  while i < array.length
+    j = 0
+    while j < array[i].length
+      output += array[i][j].to_s
+      output += ',' if j < array[i].length - 1
+      j += 1
+    end
+
+    output += "\n" if i < array.length - 1
+    i += 1
+  end
+
+  output
+end
 
 
-# Start with an array of numbers and compute product of all the numbers.
-# For example, [5, 10, 8, 3] becomes 1200.
+def to_csv_text(array)
+  array.map { |row| row.join(',') }.join("\n")
+end
 
-
-# Start with an array of strings and combine them all into a single string, separated by dashes.
-# For example, ["volleyball", "basketball", "badminton"] becomes "-volleyball-basketball-badminton-".
-
-
-# Start with an array of hashes and find the hash with the shortest name (from the :name key).
-# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "book", price: 4}.
-
-
-# Start with an array of numbers and compute the maximum number.
-# For example, [5, 10, 8, 3] becomes 10.
-
+# puts to_csv_text([[1, 2, 3], [4, 5, 6]])

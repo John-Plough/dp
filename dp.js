@@ -1,87 +1,21 @@
-// 03-loops4.md
+// 05-custom-methods-classes3.md
 
-// Start with an array of numbers and compute the sum of all the numbers.
-// For example, [5, 10, 8, 3] becomes 26.
+// Write a Song class with attributes and reader/writer methods for name, artist, and duration. Then write a method that prints the name, artist, and duration in a single sentence.
 
-const arr = [5, 10, 8, 3];
+// Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
 
-let total = arr.reduce((acc, num) => acc + num, 0);
-// console.log(total);
+// Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
 
-const sum = arr.reduce(function (acc, num) {
-  return acc + num;
-}, 0);
-// console.log(sum);
+// Write a Coordinate class with attributes and reader/writer methods for latitude and longitude. Then write a method that prints out the latitude and longitude in a single sentence.
 
-// Start with an array of strings and combine them all into a single string.
-// For example, ["volleyball", "basketball", "badminton"] becomes "volleyballbasketballbadminton".
+// Write an Account class with attributes and reader/writer methods for name and balance. Then write a method that prints a warning if the balance is below $100.
 
-const sports = ["volleyball", "basketball", "badminton"];
+// Write a Movie class with attributes and reader/writer methods for title, director, and year. Then write a method that prints out the attributes in a single sentence.
 
-const string = sports.reduce((str, sport) => str + sport, "");
-// console.log(string);
-const string1 = sports.join("");
-// console.log(string1);
+// Write a Car class with attributes and reader/writer methods for make, model, year, and color. Then write a method that returns the make and model as a single sentence in all lowercase letters.
 
-// Start with an array of hashes and compute the sum of the prices (from the :price key).
-// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes 105.
+// Write a Point class with attributes and reader/writer methods for x, y, and z coordinates. Then write a method that returns true if all 3 numbers are positive, otherwise it returns false.
 
-const items = [
-  { name: "chair", price: 100 },
-  { name: "pencil", price: 1 },
-  { name: "book", price: 4 },
-];
+// Write a Book class with attributes and reader/writer methods for title, author, and year. Then write a method that returns "Classic" if the book is older than 2000, otherwise it returns "Modern".
 
-total = items.reduce((total, item) => (total += item.price), 0);
-// console.log(total);
-
-let sum1 = 0;
-for (let i = 0; i < items.length; i++) {
-  sum1 += items[i].price;
-}
-// console.log(sum1);
-
-// Start with an array of numbers and compute the the minimum number.
-// For example, [5, 10, 8, 3, 9] becomes 3.
-
-const myNums = [5, 10, 8, 3, 9];
-let myMin = Infinity;
-
-for (let i = 0; i < myNums.length; i++) {
-  if (myNums[i] < myMin) {
-    myMin = myNums[i];
-  }
-}
-// console.log(myMin);
-
-let min = myNums.reduce((low, num) => (num < low ? num : low), Infinity);
-// console.log(min);
-
-// Start with an array of strings and compute the total length of all the strings.
-// For example, ["volleyball", "basketball", "badminton"] becomes 29.
-
-const games = ["volleyball", "basketball", "badminton"];
-total = games.reduce((sum, game) => (sum += game.length), 0);
-
-let letters = 0;
-for (let i = 0; i < games.length; i++) {
-  letters += games[i].length;
-}
-// console.log(letters);
-
-// console.log(total);
-
-// Start with an array of hashes and find the hash with the lowest price (from the :price key).
-// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "pencil", price: 1}.
-
-// Start with an array of numbers and compute product of all the numbers.
-// For example, [5, 10, 8, 3] becomes 1200.
-
-// Start with an array of strings and combine them all into a single string, separated by dashes.
-// For example, ["volleyball", "basketball", "badminton"] becomes "-volleyball-basketball-badminton-".
-
-// Start with an array of hashes and find the hash with the shortest name (from the :name key).
-// For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "book", price: 4}.
-
-// Start with an array of numbers and compute the maximum number.
-// For example, [5, 10, 8, 3] becomes 10.
+// Write a Plant class with attributes and reader/writer methods for name, size, and price. Then write a method that prints out the attributes in a single sentence.
