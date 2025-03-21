@@ -1,96 +1,97 @@
-# 05-custom-methods-classes3.md
+# 04-arrays-hashes2.md
 
-# Write a Song class with attributes and reader/writer methods for name, artist, and duration. Then write a method that prints the name, artist, and duration in a single sentence.
+# Make a hash to store a person's first name, last name, and email address. Then print each attribute on separate lines.
 
+person = { "first" => "john", "last" => "plough", "email" => "jplough@gmail.com" }
+# p person["first"]
+# p person["last"]
+# p person["email"]
 
-# Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
+person = { :first => "john", :last => "plough", :email => "jplough@gmail.com" }
+# p person[:first]
+# p person[:last]
+# p person[:email]
 
+person = { first: "john", last: "plough", email: "jplough@gmail.com" }
+# p person[:first]
+# p person[:last]
+# p person[:email]
 
-# Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
+# Make an array of hashes to store the first name and last name for 3 different people. Then print out the first person's info.
 
+people = [
+  { first: "john", last: "plough" },
+  { first: "seth", last: "plough" },
+  { first: "bill", last: "plough" }
+]
 
-# Write a Coordinate class with attributes and reader/writer methods for latitude and longitude. Then write a method that prints out the latitude and longitude in a single sentence.
+# p people[0][:first]
+# p people[2][:first]
 
+people = [
+  { "first" => "john", "last" => "plough" },
+  { "first" => "seth", "last" => "plough" },
+  { "first" => "bill", "last" => "plough" }
+]
 
-# Write an Account class with attributes and reader/writer methods for name and balance. Then write a method that prints a warning if the balance is below $100.
+# p people[0]["first"]
+# p people[2]["first"]
 
+# Make a hash to store prices for 3 different menu items. Then add a new menu item and price and print the hash to see the result.
 
-# Write a Movie class with attributes and reader/writer methods for title, director, and year. Then write a method that prints out the attributes in a single sentence.
+menu = { fries: 2, burger: 3, milkshake: 4}
+menu[:pie] = 1
 
+# p menu
 
-# Write a Car class with attributes and reader/writer methods for make, model, year, and color. Then write a method that returns the make and model as a single sentence in all lowercase letters.
+menu = { "fries" => 1, "pie" => 2, "burger" => 3, "milkshake" => 2.5 }
+menu["greens"] = 1.5
+menu[:crackers] = 0.5
 
+# p menu
 
-# Write a Point class with attributes and reader/writer methods for x, y, and z coordinates. Then write a method that returns true if all 3 numbers are positive, otherwise it returns false.
+menu = { gar: 2, biu: 3 }
+# p menu
 
+# Make a hash to store a book's title, author, number of pages, and language. Then print each attribute on separate lines.
 
-# Write a Book class with attributes and reader/writer methods for title, author, and year. Then write a method that returns "Classic" if the book is older than 2000, otherwise it returns "Modern".
+book = { title: "book title", author: "book author", pages: 300, language: "english" }
+# p book[:title]
+# p book[:author]
+# p book[:pages]
+# p book[:language]
 
+book = { "title" => "Grapes of Wrath", "author" => "John Steinbeck", "pages" => 430, "language" => "english" }
 
-# Write a Plant class with attributes and reader/writer methods for name, size, and price. Then write a method that prints out the attributes in a single sentence.
+# p book["title"]
+# p book["author"]
+# p book["pages"]
+# p book["language"]
+# Make an array of hashes to store the title and author for 3 different books. Then print out the third book's author.
 
-# Codewars - Remove Odd Hashes
+books = [
+  { title: "Grapes", author: "John" },
+  { :title => "Of", :author => "Steinbeck" },
+  { "title" => "Wrath", "author" => "bebe" }
+]
 
-def remove_odd_hashes(array, key_1, key_2)
-  array.select { |hash| (hash[key_1] + hash[key_2]).even? }
-end
-
-# p remove_odd_hashes([ {a: 5, b: 5}, 
-# {a: 3, b: 4}, 
-# {a: 2, b: 0}, 
-# {a: 2, b: 1}], 
-# :a, :b)
-
-# Codewars - Sum of Cubes
-
-def sum_cubes(n)
-  total = 0
-  i = 1
-
-  while i <= n
-    total += (i*i*i)
-    i += 1
-  end
-
-  total
-end
-
-def sum_cubes(n)
-
-end
-
-def sum_cubes(n)
-  (1..n).inject(0) { |sum, i| sum + i**3 }
-end
-
-def sum_cubes(n)
-  (1..n).sum { |i| i**3 }
-end
-
-# Codewars - CSV representation of array
-
-def to_csv_text(array)
-  output = ''
-  i = 0
-
-  while i < array.length
-    j = 0
-    while j < array[i].length
-      output += array[i][j].to_s
-      output += ',' if j < array[i].length - 1
-      j += 1
-    end
-
-    output += "\n" if i < array.length - 1
-    i += 1
-  end
-
-  output
-end
+p books[0][:title]
+p books[1][:title]
+p books[2]["title"]
 
 
-def to_csv_text(array)
-  array.map { |row| row.join(',') }.join("\n")
-end
+# Make a hash to store 3 different states and their capitals. Then add a new state and capital and print the hash to see the
 
-# puts to_csv_text([[1, 2, 3], [4, 5, 6]])
+
+# result.
+# Make a hash to store a laptop's brand, model, and year. Then print each attribute on separate lines.
+
+
+# Make an array of hashes to store the brand and model for 3 different laptops. Then print out the second laptop's model.
+
+
+# Make a hash to store definitions for 2 different words. Then add a new word and definition and print the hash to see the result.
+
+
+# Make a hash to store a shirt's brand, color, and size. Then print each attribute on separate lines.
+

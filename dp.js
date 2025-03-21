@@ -1,21 +1,61 @@
-// 05-custom-methods-classes3.md
+// 04-arrays-hashes2.md
 
-// Write a Song class with attributes and reader/writer methods for name, artist, and duration. Then write a method that prints the name, artist, and duration in a single sentence.
+// Make a hash to store a person's first name, last name, and email address. Then print each attribute on separate lines.
 
-// Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
+const person = { first: "john", last: "plough", email: "jplough@gmail.com" };
 
-// Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
+// console.log(person.first);
+// console.log(person.last);
+// console.log(person.email);
+// console.log(person["email"]);
 
-// Write a Coordinate class with attributes and reader/writer methods for latitude and longitude. Then write a method that prints out the latitude and longitude in a single sentence.
+// Make an array of hashes to store the first name and last name for 3 different people. Then print out the first person's info.
 
-// Write an Account class with attributes and reader/writer methods for name and balance. Then write a method that prints a warning if the balance is below $100.
+const people = [
+  { first: "john", last: "plough" },
+  { first: "seth", last: "plough1" },
+  { first: "bill", last: "plough2" },
+];
 
-// Write a Movie class with attributes and reader/writer methods for title, director, and year. Then write a method that prints out the attributes in a single sentence.
+// console.log(people[0]);
+// console.log(people[1].first);
+// console.log(people[2]["last"]);
 
-// Write a Car class with attributes and reader/writer methods for make, model, year, and color. Then write a method that returns the make and model as a single sentence in all lowercase letters.
+// Make a hash to store prices for 3 different menu items. Then add a new menu item and price and print the hash to see the result.
 
-// Write a Point class with attributes and reader/writer methods for x, y, and z coordinates. Then write a method that returns true if all 3 numbers are positive, otherwise it returns false.
+const menu = { fries: 2, burger: 3, steak: 5 };
+menu.pie = 3;
+menu["milkshake"] = 3;
+// console.log(menu);
 
-// Write a Book class with attributes and reader/writer methods for title, author, and year. Then write a method that returns "Classic" if the book is older than 2000, otherwise it returns "Modern".
+// Make a hash to store a book's title, author, number of pages, and language. Then print each attribute on separate lines.
 
-// Write a Plant class with attributes and reader/writer methods for name, size, and price. Then write a method that prints out the attributes in a single sentence.
+const book = { title: "Grapes", author: "John", pages: 444, language: "english" };
+
+// console.log(book.title);
+// console.log(book.author);
+// console.log(book.pages);
+// console.log(book["language"]);
+
+// Make an array of hashes to store the title and author for 3 different books. Then print out the third book's author.
+
+const books = [
+  { title: "The Grapes", author: "John" },
+  { title: "Of", author: "C" },
+  { title: "Wrath", author: "Steinbeck" },
+];
+
+console.log(books[0].title);
+console.log(books[1]["title"]);
+console.log(books[2].author);
+
+// Make a hash to store 3 different states and their capitals. Then add a new state and capital and print the hash to see the
+
+// result.
+// Make a hash to store a laptop's brand, model, and year. Then print each attribute on separate lines.
+
+// Make an array of hashes to store the brand and model for 3 different laptops. Then print out the second laptop's model.
+
+// Make a hash to store definitions for 2 different words. Then add a new word and definition and print the hash to see the result.
+
+// Make a hash to store a shirt's brand, color, and size. Then print each attribute on separate lines.
