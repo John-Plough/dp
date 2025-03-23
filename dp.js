@@ -1,61 +1,50 @@
-// 04-arrays-hashes2.md
+// 02-conditionals3.md
 
-// Make a hash to store a person's first name, last name, and email address. Then print each attribute on separate lines.
+// Write a program that stores a customer's age and a movie's time in two separate variables. Then calculate the price of a movie ticket based on the following conditions:
 
-const person = { first: "john", last: "plough", email: "jplough@gmail.com" };
+// If the age is 12 years old or younger, the ticket price is $5.
+// If the age is between 13 and 59 years old and the movie is before 6 PM, the ticket price is $7. After 6 PM, the ticket price is $10.
+// If the customer is 60 years old or older, the ticket price is $7.
 
-// console.log(person.first);
-// console.log(person.last);
-// console.log(person.email);
-// console.log(person["email"]);
+function price(age, time) {
+  if (age <= 12) {
+    return 5;
+  } else if (age <= 59) {
+    if (time < 6) {
+      return 7;
+    } else {
+      return 10;
+    }
+  } else {
+    return 7;
+  }
+}
 
-// Make an array of hashes to store the first name and last name for 3 different people. Then print out the first person's info.
+// console.log(price(5, 5));
+// console.log(price(5, 9));
+// console.log(price(14, 5));
+// console.log(price(14, 9));
+// console.log(price(88, 5));
+// console.log(price(88, 9));
 
-const people = [
-  { first: "john", last: "plough" },
-  { first: "seth", last: "plough1" },
-  { first: "bill", last: "plough2" },
-];
+// Write a program to store the type of book (regular, reference, or special collection) and the number of days its overdue. Then calculate the fine amount based on the following conditions:
 
-// console.log(people[0]);
-// console.log(people[1].first);
-// console.log(people[2]["last"]);
+// If the book is a regular book and overdue by up to 7 days, the fine is $1 per day.
+// If the book is a regular book and overdue by more than 7 days, the fine is $2 per day.
+// If the book is a reference book, there is no fine, regardless of the number of days overdue.
+// If the book is a special collection book, the fine is $5 per day, regardless of the number of days overdue.
 
-// Make a hash to store prices for 3 different menu items. Then add a new menu item and price and print the hash to see the result.
+// Write a program that stores a person's order value and membership level (regular or premium). Then calculate a discount amount based on the following conditions:
 
-const menu = { fries: 2, burger: 3, steak: 5 };
-menu.pie = 3;
-menu["milkshake"] = 3;
-// console.log(menu);
+// If the total order value is less than $50, there is no discount.
+// If the total order value is between $50 and $100, the discount is 5% for regular customers and 10% for premium customers.
+// If the total order value is greater than $100, the discount is 10% for regular customers and 15% for premium customers.
 
-// Make a hash to store a book's title, author, number of pages, and language. Then print each attribute on separate lines.
+// Write a Ruby program that stores the weight of a package and the destination (domestic or international). Then calculate the shipping fee based on the following conditions:
 
-const book = { title: "Grapes", author: "John", pages: 444, language: "english" };
-
-// console.log(book.title);
-// console.log(book.author);
-// console.log(book.pages);
-// console.log(book["language"]);
-
-// Make an array of hashes to store the title and author for 3 different books. Then print out the third book's author.
-
-const books = [
-  { title: "The Grapes", author: "John" },
-  { title: "Of", author: "C" },
-  { title: "Wrath", author: "Steinbeck" },
-];
-
-console.log(books[0].title);
-console.log(books[1]["title"]);
-console.log(books[2].author);
-
-// Make a hash to store 3 different states and their capitals. Then add a new state and capital and print the hash to see the
-
-// result.
-// Make a hash to store a laptop's brand, model, and year. Then print each attribute on separate lines.
-
-// Make an array of hashes to store the brand and model for 3 different laptops. Then print out the second laptop's model.
-
-// Make a hash to store definitions for 2 different words. Then add a new word and definition and print the hash to see the result.
-
-// Make a hash to store a shirt's brand, color, and size. Then print each attribute on separate lines.
+// If the destination is domestic:
+// If the weight is less than or equal to 1 kg, the shipping fee is $5.
+// If the weight is greater than 1 kg, the shipping fee is $10.
+// If the destination is an international shipment:
+// If the weight is less than or equal to 1 kg, the shipping fee is $15.
+// If the weight is greater than 1 kg, the shipping fee is $25.
