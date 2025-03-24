@@ -49,3 +49,83 @@ p price(61, 8)
 # If the destination is an international shipment:
 # If the weight is less than or equal to 1 kg, the shipping fee is $15.
 # If the weight is greater than 1 kg, the shipping fee is $25.
+
+
+def remainder(a, b)
+  if a > b
+    if b == 0
+      return nil
+    else
+      result = a % b
+    end
+  else
+    if a == 0
+      return nil
+    else
+      result = b % a
+    end
+  end
+  result < 0 ? 0 : result
+end
+
+
+def multiply(n)
+  power = n > 0 ? n.to_s.length : n.to_s.length - 1
+  n * (5**power)
+end
+
+def multiply(n)
+  n * (5**(n.abs.to_s.length))
+  5**n.abs.to_s.length * n
+end
+
+
+def contamination(text, char)
+  if text == "" || char == ""
+    return ""
+  end
+
+  infected = ""
+
+  i = 0 
+  while i < text.length
+    infected += char
+    i += 1
+  end
+
+  return infected
+end
+
+
+def even_numbers(arr,n)
+  rev = arr.reverse
+  evens = []
+
+  i = 0
+  while evens.length < n
+    num = rev[i]
+    if num.even?
+      evens.unshift(num)
+    end
+    i += 1
+  end  
+    
+  evens
+end
+
+
+
+def even_numbers(arr,n)
+  rev = arr.reverse
+  evens = rev.select { |num| num.even? }
+  result = 
+    
+  evens
+end
+
+
+def even_numbers(arr,n)
+  arr.select(&:even?).last(n)
+end
+
+# ([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
