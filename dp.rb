@@ -19,14 +19,14 @@ def price(age, time)
   end
 end
 
-p price(5, 4)
-p price(5, 8)
-p price(13, 4)
-p price(13, 8)
-p price(50, 4)
-p price(50, 8)
-p price(61, 4)
-p price(61, 8)
+# p price(5, 4)
+# p price(5, 8)
+# p price(13, 4)
+# p price(13, 8)
+# p price(50, 4)
+# p price(50, 8)
+# p price(61, 4)
+# p price(61, 8)
 
 # Write a program to store the type of book (regular, reference, or special collection) and the number of days its overdue. Then calculate the fine amount based on the following conditions:
 
@@ -129,3 +129,84 @@ def even_numbers(arr,n)
 end
 
 # ([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
+
+def char_at(str, idx)
+  idx < str.length ? str[idx] : ""
+end
+
+# p char_at('awesome', 2) # 'e'
+# p char_at('awesome', 12) # ''
+
+
+
+
+def evaporator(start, percent_lost_per_day, threshold)
+  day = 0
+  remaining = start
+  limit = start * (threshold * 0.01)
+
+  while remaining > limit
+    day += 1
+    remaining = remaining - (remaining * percent_lost_per_day * 0.01)
+  end
+
+  day
+end
+
+# p evaporator(10, 10, 10)
+  
+def encrypt_this(text)
+  if text.empty?
+    return ''
+  end
+
+  result = ''
+  words_array = text.split(" ")  # ['A', 'wise', 'old']
+
+  i = 0
+  while i < words_array.length
+    word = words_array[i]
+    word_arr = word.split("")  # ['w', 'i', 's', 'e']
+    ascii = word_arr[0].ord.to_s
+    result += ascii
+
+    if word.length > 1
+      word[1], word[word.length - 1] = word[word.length - 1], word[1]
+
+      j = 1
+      while j < word.length
+        result += word[j]
+        j += 1
+      end
+    end
+    
+    if i < words_array.length - 1
+      result += ' '
+    end
+
+    i += 1
+  end
+
+  result
+end
+
+
+def encrypt_this(text)
+  text.split.map do |word|
+    encrypted = word.dup
+
+    encrypted[1], encrypted[-1] = encrypted[-1], encrypted[1] if encrypted.size > 2
+    encrypted[0] = encrypted[0].ord.to_s
+    encrypted
+  end.join(' ')
+end
+
+def encrypt_this(text)
+  text.split.map { |word|
+    word[1], word[-1] = word[-1], word[1] if word.size > 2
+    word[0] = word[0].ord.to_s
+    word
+  } .join(' ')
+end
+
+p encrypt_this("Abc")

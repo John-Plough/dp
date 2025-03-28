@@ -48,3 +48,11 @@ function price(age, time) {
 // If the destination is an international shipment:
 // If the weight is less than or equal to 1 kg, the shipping fee is $15.
 // If the weight is greater than 1 kg, the shipping fee is $25.
+
+function charAt(str, idx) {
+  return idx < str.length ? str[idx] : "";
+  return idx < str.length ? str[idx] : "";
+}
+
+charAt("awesome", 2); // 'e'
+charAt("awesome", 12); // ''
