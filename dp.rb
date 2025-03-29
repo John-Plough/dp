@@ -1,212 +1,134 @@
-# 02-conditionals3.md
+# def _if(bool, ifTrue, ifFalse)
+#   bool ? ifTrue : ifFalse
+# end
 
-# Write a program that stores a customer's age and a movie's time in two separate variables. Then calculate the price of a movie ticket based on the following conditions:
-
-# If the age is 12 years old or younger, the ticket price is $5.
-# If the age is between 13 and 59 years old and the movie is before 6 PM, the ticket price is $7. After 6 PM, the ticket price is $10.
-# If the customer is 60 years old or older, the ticket price is $7.
-
-
-def price(age, time)
-  if age <= 12
-    5
-  elsif age <= 12
-    if time < 6
-      7
-    else
-      10
-    end
-  end
-end
-
-# p price(5, 4)
-# p price(5, 8)
-# p price(13, 4)
-# p price(13, 8)
-# p price(50, 4)
-# p price(50, 8)
-# p price(61, 4)
-# p price(61, 8)
-
-# Write a program to store the type of book (regular, reference, or special collection) and the number of days its overdue. Then calculate the fine amount based on the following conditions:
-
-# If the book is a regular book and overdue by up to 7 days, the fine is $1 per day.
-# If the book is a regular book and overdue by more than 7 days, the fine is $2 per day.
-# If the book is a reference book, there is no fine, regardless of the number of days overdue.
-# If the book is a special collection book, the fine is $5 per day, regardless of the number of days overdue.
-
-# Write a program that stores a person's order value and membership level (regular or premium). Then calculate a discount amount based on the following conditions:
-
-# If the total order value is less than $50, there is no discount.
-# If the total order value is between $50 and $100, the discount is 5% for regular customers and 10% for premium customers.
-# If the total order value is greater than $100, the discount is 10% for regular customers and 15% for premium customers.
-
-# Write a Ruby program that stores the weight of a package and the destination (domestic or international). Then calculate the shipping fee based on the following conditions:
-
-# If the destination is domestic:
-# If the weight is less than or equal to 1 kg, the shipping fee is $5.
-# If the weight is greater than 1 kg, the shipping fee is $10.
-# If the destination is an international shipment:
-# If the weight is less than or equal to 1 kg, the shipping fee is $15.
-# If the weight is greater than 1 kg, the shipping fee is $25.
+# def if(val, cb1, cb2)
+#   val ? cb1 : cb2
+# end
 
 
-def remainder(a, b)
-  if a > b
-    if b == 0
-      return nil
-    else
-      result = a % b
-    end
-  else
-    if a == 0
-      return nil
-    else
-      result = b % a
-    end
-  end
-  result < 0 ? 0 : result
-end
-
-
-def multiply(n)
-  power = n > 0 ? n.to_s.length : n.to_s.length - 1
-  n * (5**power)
-end
-
-def multiply(n)
-  n * (5**(n.abs.to_s.length))
-  5**n.abs.to_s.length * n
-end
-
-
-def contamination(text, char)
-  if text == "" || char == ""
-    return ""
-  end
-
-  infected = ""
-
-  i = 0 
-  while i < text.length
-    infected += char
-    i += 1
-  end
-
-  return infected
-end
-
-
-def even_numbers(arr,n)
-  rev = arr.reverse
-  evens = []
-
-  i = 0
-  while evens.length < n
-    num = rev[i]
-    if num.even?
-      evens.unshift(num)
-    end
-    i += 1
-  end  
-    
-  evens
-end
-
-
-
-def even_numbers(arr,n)
-  rev = arr.reverse
-  evens = rev.select { |num| num.even? }
-  result = 
-    
-  evens
-end
-
-
-def even_numbers(arr,n)
-  arr.select(&:even?).last(n)
-end
-
-# ([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
-
-def char_at(str, idx)
-  idx < str.length ? str[idx] : ""
-end
-
-# p char_at('awesome', 2) # 'e'
-# p char_at('awesome', 12) # ''
-
-
-
-
-def evaporator(start, percent_lost_per_day, threshold)
-  day = 0
-  remaining = start
-  limit = start * (threshold * 0.01)
-
-  while remaining > limit
-    day += 1
-    remaining = remaining - (remaining * percent_lost_per_day * 0.01)
-  end
-
-  day
-end
-
-# p evaporator(10, 10, 10)
   
-def encrypt_this(text)
-  if text.empty?
-    return ''
+  # loop over str
+    # if consonant, add char.ord - 96 to sub
+    # else 
+      # if sub > high
+        # high = sub
+      # sub = 0
+  # return high
+
+
+
+# def solve(s)
+#   vowels = ['a', 'e', 'i', 'o', 'u']
+#   high = 0
+#   sub = 0
+
+#   i = 0
+#   while i < s.length
+#     char = s[i]
+#     if !vowels.include?(char) # if not a vowel
+#       sub += (char.ord - 96) # add char val to sub
+#     else
+#       if sub > high
+#         high = sub
+#       end
+#       sub = 0
+#     end
+#     i += 1
+#   end
+#   high
+# end
+
+
+# def solve(s)
+#   vowels = ['a', 'e', 'i', 'o', 'u']
+#   high = 0
+#   sub = 0
+
+#   s.each_char do |char|
+#     if !vowels.include?(char) # if NOT a vowel
+#       sub += (char.ord - 96) # add char val to sub
+#     else # if vowel
+#       if sub > high
+#         high = sub
+#       end
+#       sub = 0 # reset sub to 0 for next substring
+#     end
+#   end
+#   if sub > high
+#     high = sub
+#   end
+#   high
+# end
+
+
+# p solve('zodiac')
+
+
+# def solve(s)
+#   s.split(/[aeiou]/).map{|x| x.sum - x.size * 96}.max
+# end
+
+
+
+# def solve(s)
+#   s.split(/[aeiou]/).map{ |substring| substring.sum - (substring.size * 96) }.max
+# end
+
+# def solve(str)
+#   # create array of consonant substrings
+#   subs_arr = str.split(/[aeiou]/) 
+
+#   # create array of substring values
+#   vals = subs_arr.map { |substring| substring.sum - (substring.size * 96) }
+
+#   # return highest value
+#   vals.max
+# end
+
+s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+
+def meeting(s)
+  names = s.downcase.split(';').map { |name| name.split(':') }
+
+  sorted = names.sort do |a, b|
+    last = a[1] <=> b[1]
+    last == 0 ? a[0] <=> b[0] : last
   end
 
-  result = ''
-  words_array = text.split(" ")  # ['A', 'wise', 'old']
-
-  i = 0
-  while i < words_array.length
-    word = words_array[i]
-    word_arr = word.split("")  # ['w', 'i', 's', 'e']
-    ascii = word_arr[0].ord.to_s
-    result += ascii
-
-    if word.length > 1
-      word[1], word[word.length - 1] = word[word.length - 1], word[1]
-
-      j = 1
-      while j < word.length
-        result += word[j]
-        j += 1
-      end
-    end
-    
-    if i < words_array.length - 1
-      result += ' '
-    end
-
-    i += 1
-  end
-
-  result
+  sorted.map { |name| "(#{name[1].upcase}, #{name[0].upcase})" }.join
 end
 
+# more readable version, with intermediate variables
+# def meeting(s)
+#   names = s.downcase.split(';').map { |name| name.split(':') }
 
-def encrypt_this(text)
-  text.split.map do |word|
-    encrypted = word.dup
+#   sorted = names.sort_by { |name| [name[1], name[0]] }
 
-    encrypted[1], encrypted[-1] = encrypted[-1], encrypted[1] if encrypted.size > 2
-    encrypted[0] = encrypted[0].ord.to_s
-    encrypted
-  end.join(' ')
+#   formatted_names = sorted.map { |name| "(#{name[1].upcase}, #{name[0].upcase})" }
+
+#   formatted_names.join
+# end
+
+
+def meeting(s)
+  s.upcase.split(';')
+    .map { |name| name.split(':') } # names
+    .sort_by { |name| [name[1], name[0]] } # sorted
+    .map { |name| "(#{name[1]}, #{name[0]})" } # formatted
+    .join # joined & returned
 end
 
-def encrypt_this(text)
-  text.split.map { |word|
-    word[1], word[-1] = word[-1], word[1] if word.size > 2
-    word[0] = word[0].ord.to_s
-    word
-  } .join(' ')
-end
+# more readable version, with intermediate variables
+# def meeting(s)
+#   names = s.downcase.split(';').map { |name| name.split(':') }
 
-p encrypt_this("Abc")
+#   sorted = names.sort_by { |name| [name[1], name[0]] }
+
+#   formatted_names = sorted.map { |name| "(#{name[1].upcase}, #{name[0].upcase})" }
+
+#   formatted_names.join
+# end
+
+
+p meeting(s)
