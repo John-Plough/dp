@@ -1,156 +1,234 @@
-# # # def angle(n)
+# # # input: str
+# # # output: str
 
-# # # end
+# # def generateHashtag(str)
+# #   return false if str.strip.empty?
 
+# #   result = str.split.map { |word| word.capitalize }.join
 
-# # # p "\n".match?(/[^[:alpha:]]/)
-# # # p "1".match?(/[^[:alpha:]]/)
-# # # p "B".match?(/[^[:alpha:]]/)
-
-# # # if "\n".match?(/[^[:alpha:]]/) || "b".match?(/[^[:alpha:]]/)
-# # #   p -1
-# # # end
-
-# # def same_case(a, b)
-# #   return -1 unless (a+b).match?(/\A[a-zA-Z]{2}\z/)
-
-# #   if (a.match?(/[a-z]/)) && (b.match?(/[a-z]/)) || (a.match?(/[A-Z]/)) && (b.match?(/[A-Z]/))
-# #     return 1
-# #   else
-# #     return 0
-# #   end
-# # end
-
-# # def same_case(a, b)
-# #   return -1 unless (a+b).match?(/\A[a-zA-Z]{2}\z/)
-
-# #   a.match?(/[a-z]/) && b.match?(/[a-z]/) ? 1 : 0
-# #   # if (a.match?(/[a-z]/)) && (b.match?(/[a-z]/)) || (a.match?(/[A-Z]/)) && (b.match?(/[A-Z]/))
-# #   #   return 1
-# #   # else
-# #   #   return 0
-# #   # end
-# # end
-
-# # def same_case(a, b)
-# #   return -1 unless (a+b).match?(/\A[a-zA-Z]{2}\z/)
-# #   (a == a.upcase) == (b == b.upcase) ? 1 : 0
+# #   result.size > 139 ? false : "#" + result
 # # end
 
 
+# # def generate_hashtag(str)
+# #   return false if str.strip.empty?
 
-# def bouncing_ball(h, bounce, window)
-#   if h <= 0 || bounce <= 0 || bounce >= 1 || window >= h
-#     return -1
-#   end
+# #   result = "#" + str.split.map(&:capitalize).join
+# #   result.length > 140 ? false : result
+# # end
 
-#   views = 1
 
-#   while h *= bounce > window
-#     views += 2
-#   end
+# # def generateHashtag(str)
+# #   return false if str.strip.empty?
 
-#   views
+# #   result = "#" + str.split.map(&:capitalize).join
+# #   result.length > 140 ? false : result
+# # end
+
+# # # if empty, return false
+
+# # # cut off whitespace
+# # # separate into arr of words
+# # # cap first letter of each word
+# # # result = join on nothing, and precede with hashtag
+
+# # # if longer than 140, return false
+# # # else return result
+
+# # p "    Hello     World   ".split
+
+
+# # input: arr of strings ---> ["North", "South", "East"]
+# # output: arr of strings ---> ["East"]
+
+# def dir_reduc(pole)
+  
 # end
 
 
-# # (3, .66, 1.5) --> 3
+
+# # add direction to result_arr
+# result = []
+
+# base = pole[0]
+
+# i = 0
+# while i < pole.length  # --> 7
+#   cur = pole[i]        # cur = 5 - N
+#                        # i = 5
+  
+#   while pole[i + 1] is opposite or same
+#     i += 1
+#   end
+
+#   i += 1
+#   # cur = pole[i]
+#   # else  
+#   #   i += 1
+# end
+    
+# i =        0        1        2       3        4       5       6
+# pole = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+# []
 
 
-def moveZeros(arr) 
-  # loop over
-    # if 0, add to zero_total
-    # else push to new arr
-  # while loop to add 0s to new arr
+# start vertical
+# n - s,n --> cancels
+# n - w,e -
+# e - s, n
 
-  result = arr.select { |num| num != 0 }
-  zeros = arr.select { |num| num == 0 }
-  result.concat(zeros)
+
+# def dir_reduc(poles)
+#   opposites = { 
+#     NORTH: "SOUTH", 
+#     SOUTH: "NORTH", 
+#     EAST: "WEST", 
+#     WEST: "EAST" 
+#   }
+#   shortcut = []
+
+#   poles.each do |direction|
+#     if shortcut.last == opposites[direction]
+#       shortcut.pop
+#     else
+#       shortcut.push(direction)
+#     end
+#   end
+
+#   shortcut
+# end
+
+# # i =        0        1        2       3        4       5       6
+# # poles = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+# # short = [S]
+
+# # Opposites = {
+# #   "NORTH" => "SOUTH",
+# #   "SOUTH" => "NORTH",
+# #   "EAST" => "WEST",
+# #   "WEST" => "EAST"
+# # }
+
+# # def dirReduc(arr)
+# #   shortcut = []
+
+# #   arr.each do |dir|
+# #     Opposites[dir] == shortcut.last ? shortcut.pop : shortcut.push(dir)
+# #   end
+
+# #   shortcut
+# # end
+
+# # ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+# # "stress"
+# def first_non_repeating_letter(s) 
+#   bank = Hash.new(0)
+
+#   s.each_char { |char| bank[char.upcase] += 1}
+
+#   s.each_char do |char|
+#     if bank[char.upcase] == 1
+#       return char
+#     end
+#   end
+
+#   return ""
+# end
+
+
+# create hash
+
+# loop over string
+
+# check hash for char.upcase
+#   if exists, increment
+#   else add char
+
+# loop over string again,
+#   if val is 1, return it
+
+# return ""
+
+
+
+# def  first_non_repeating_letter(s) 
+# 	s.chars.find {|i| s.downcase.count(i)==1 || s.upcase.count(i)==1} || ""
+# end
+
+# acceptable = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm']
+
+# def printer_error(s)
+
+#   errors
+# 	s.each_char do |char|
+#     if !acceptable.include?
+#       errors += 1
+#     end
+#   end
+#   "#{errors}/#{s.length}"
+# end
+
+# loop over S
+# if not a-m, increment errors
+
+# return "#{errors}/#{s.length}"
+
+
+# i = 0
+# sum of []
+# sum of [1..]
+# sum of 
+
+# if sum > max
+#   max = sum
+# end
+
+def max_sequence(arr)
+
+  if arr.empty?
+    return 0
+  end
+  
+  if arr.length == 1
+    return arr[0] > 0 ? arr[0] : 0
+  end
+
+  max = 0
+  i = 0
+  while i < arr.length
+    j = i
+    while j <= arr.length
+      if arr[i..j].sum > max
+        max = arr[i..j].sum
+      end
+      j += 1
+    end
+    i += 1
+  end
+  max
 end
 
+# [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+# i = 0
+# j = 1
+
+p max_sequence([-9, -17, -6, 0, -8, 24])
+# p [1,2][0..0].sum
 
 
-# p moveZeros [1,2,0,1,0,1,0,3,0,1] # --> [1,2,1,1,3,1,0,0,0,0]
-# puts "00".to_i(16)
+def max_sequence(arr)
+  return 0 if arr.empty?
 
-# puts "FF".to_i(16)
-
-# puts 255.to_s(16).upcase
-
-# puts r.to_s(16).upcase
-
-def rgb(r, g, b)
-  if r < 0
-    r = 0
-  elsif r > 255
-    r = 255
+  best_sum = 0
+  max = 0
+  
+  arr.each do |num|
+    best_sum = [num, best_sum + num].max
+    max = [max, best_sum].max            
   end
 
-  if g < 0
-    g = 0
-  elsif g > 255
-    g = 255
-  end
-
-  if b < 0
-    b = 0
-  elsif b > 255
-    b = 255
-  end
-
-  result = ''
-  rhex = r.to_s(16).upcase
-  ghex = g.to_s(16).upcase
-  bhex = b.to_s(16).upcase
-
-  if rhex.size < 2
-    result += "0" + rhex
-  else
-    result += rhex
-  end
-
-  if ghex.size < 2
-    result += "0" + ghex
-  else
-    result += ghex
-  end
-
-  if bhex.size < 2
-    result += "0" + bhex
-  else
-    result += bhex
-  end
-
-  result
+  max
 end
 
-p rgb(0,9,14)
-
-# p 259.to_s(16).upcase
-
-# p "FF".to_i < 5
-
-# p "10".size
-
-
-def rgb(r, g, b)
-  [r, g, b]
-    .map { |val| [[val, 0].max, 255].min } 
-    .map { |val| val.to_s(16).rjust(2, '0').upcase } 
-    .join
-end
-
-
-[r, g, b].map { |val| [[val, 0].max, 255].min } # clamp vals
-
-
-Please use the adjustments from the previous questions. And please just separate numbers with a space instead of a comma and a space.
-
-numbers = {34 59 60 30 63 94 93 77 75 99}
-partition(numbers, 0, 4) is called.
-Assume quicksort always chooses the element at the midpoint as the pivot.
-
-What is the pivot?
-What is the low partition?
-What is the high partition?
-What is numbers after partition(numbers, 0, 4) completes?
+# [-9, -17, -6, 0, -8, 24]
