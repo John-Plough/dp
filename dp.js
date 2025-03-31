@@ -56,3 +56,4 @@ function charAt(str, idx) {
 
 charAt("awesome", 2); // 'e'
 charAt("awesome", 12); // ''
+console.log(console.log());
