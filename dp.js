@@ -1,59 +1,37 @@
-// 02-conditionals3.md
+function plusMinus(arr) {
+  let pos = 0;
+  let neg = 0;
+  let zero = 0;
 
-// Write a program that stores a customer's age and a movie's time in two separate variables. Then calculate the price of a movie ticket based on the following conditions:
-
-// If the age is 12 years old or younger, the ticket price is $5.
-// If the age is between 13 and 59 years old and the movie is before 6 PM, the ticket price is $7. After 6 PM, the ticket price is $10.
-// If the customer is 60 years old or older, the ticket price is $7.
-
-function price(age, time) {
-  if (age <= 12) {
-    return 5;
-  } else if (age <= 59) {
-    if (time < 6) {
-      return 7;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      pos++;
+    } else if (arr[i] < 0) {
+      neg++;
     } else {
-      return 10;
+      zero++;
     }
-  } else {
-    return 7;
   }
+  console.log((pos / arr.length).toFixed(6));
+  console.log((neg / arr.length).toFixed(6));
+  console.log((zero / arr.length).toFixed(6));
 }
 
-// console.log(price(5, 5));
-// console.log(price(5, 9));
-// console.log(price(14, 5));
-// console.log(price(14, 9));
-// console.log(price(88, 5));
-// console.log(price(88, 9));
+function plusMinus(arr) {
+  let pos = 0;
+  let neg = 0;
+  let zero = 0;
+  let len = arr.length;
 
-// Write a program to store the type of book (regular, reference, or special collection) and the number of days its overdue. Then calculate the fine amount based on the following conditions:
+  for (const num of arr) {
+    if (num > 0) pos++;
+    else if (num < 0) neg++;
+    else zero++;
+  }
 
-// If the book is a regular book and overdue by up to 7 days, the fine is $1 per day.
-// If the book is a regular book and overdue by more than 7 days, the fine is $2 per day.
-// If the book is a reference book, there is no fine, regardless of the number of days overdue.
-// If the book is a special collection book, the fine is $5 per day, regardless of the number of days overdue.
-
-// Write a program that stores a person's order value and membership level (regular or premium). Then calculate a discount amount based on the following conditions:
-
-// If the total order value is less than $50, there is no discount.
-// If the total order value is between $50 and $100, the discount is 5% for regular customers and 10% for premium customers.
-// If the total order value is greater than $100, the discount is 10% for regular customers and 15% for premium customers.
-
-// Write a Ruby program that stores the weight of a package and the destination (domestic or international). Then calculate the shipping fee based on the following conditions:
-
-// If the destination is domestic:
-// If the weight is less than or equal to 1 kg, the shipping fee is $5.
-// If the weight is greater than 1 kg, the shipping fee is $10.
-// If the destination is an international shipment:
-// If the weight is less than or equal to 1 kg, the shipping fee is $15.
-// If the weight is greater than 1 kg, the shipping fee is $25.
-
-function charAt(str, idx) {
-  return idx < str.length ? str[idx] : "";
-  return idx < str.length ? str[idx] : "";
+  console.log((pos / len).toFixed(6));
+  console.log((neg / len).toFixed(6));
+  console.log((zero / len).toFixed(6));
 }
 
-charAt("awesome", 2); // 'e'
-charAt("awesome", 12); // ''
-console.log(console.log());
+plusMinus([-4, 3, -9, 0, 4, 1]);
